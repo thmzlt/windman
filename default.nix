@@ -16,7 +16,14 @@ pkgs.stdenv.mkDerivation rec {
   # Allow users set their own list of patches
   #inherit patches;
 
-  buildInputs = [ pkgs.xorg.libxcb pkgs.xorg.xcbutilkeysyms pkgs.xorg.xcbutilwm pkgs.xorg.libX11 pkgs.xorg.xcbutil pkgs.xcbutilxrm ];
+  buildInputs = [
+    pkgs.xorg.libxcb
+    pkgs.xorg.xcbutilkeysyms
+    pkgs.xorg.xcbutilwm
+    pkgs.xorg.libX11
+    pkgs.xorg.xcbutil
+    pkgs.xcbutilxrm
+  ];
 
   installPhase = "make install DESTDIR=$out PREFIX=\"\"";
 }
